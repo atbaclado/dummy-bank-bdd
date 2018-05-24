@@ -1,0 +1,71 @@
+<!-- <!doctype html> -->
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Dummy Bank</title>
+    <link rel="stylesheet" href="stylesheets/main.css">
+  </head>
+
+  <body id="index">
+    <div id="margin">
+        
+      <div id="center">
+        <div id="wtdb">
+          <h1>Welcome to Mummy Bank!</h1>
+        </div>
+        <hr><br>
+        
+        <!-- Changes in css variable naming -->
+        <div id="status_message">
+            <p>{{ messages.statusMessage }}</p>
+        </div>
+
+        <form id="signup" action="/signup" method="post">
+          <div id="form-div">
+            <h2>Sign Up</h2>
+            <h3 id="signupMsg">{{ messages.signUpMessage }}</h3>
+            <div>                            
+              <div>
+                <input type="text" name="email" id="email" placeholder="Email" required>
+              </div>
+              <div>
+                <input type="password" name="password" id="password" placeholder="Password" required>
+              </div>
+              <div>
+                <input type="password" name="confirmation" id="confirmation" placeholder="Confirm Password" required>
+              </div>
+                <button class="button-1">Sign Up</button>
+            </div>
+          </div>
+        </form>
+
+        <form id="signin" action="/signin" method="post">
+          <div id="form-div">
+            <h2>Sign In</h2>
+            <h3 id="signinMsg">{{ messages.signInMessage }}</h3>
+
+            <div>
+              <div>
+                <input type="text" name="email" id="email" placeholder="Email" required>
+              </div>
+              <div>
+                <input type="password" name="password" id="password" placeholder="Password" required>
+              </div>
+
+              <button class="button-1">Sign In</button><br>
+              <div id="form-div">
+                <label>
+                  <input type="checkbox" name="remember" value="yes">
+                    Remember me?
+                </label>
+                <br><br>
+                <a href="/auth/twitter"><img class="icon tweet" src="images/twitter.png"></a>
+                <a href="/auth/google"><img class="icon" src="images/google.png"></a>
+              </div>
+            </div>
+          </div>                
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

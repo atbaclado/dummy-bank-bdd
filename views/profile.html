@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Profile | Dummy Bank</title>
+    <link rel="stylesheet" href="stylesheets/main.css">
+  </head>
+
+  <body id="profile">
+    <div id="margin">
+      <div id="center">
+
+        <div id="start">
+            <p class="statMsg isa_info">{{ messages.statusMessage }}</p>
+
+            {% if user.name == null %}
+                <h1 class="statMsg">{{ user.email }}</h1>
+            {% else %}
+                <h1 class="statMsg">{{ user.name }}</h1>
+            {% endif %}
+
+            <br><br>
+            <a href="/signout"><button class="button-1">Sign Out</button></a>
+            <hr>
+        </div>
+          
+        <div>
+          <form action="/deposit" method="post">
+            <div id="form-div">
+                <input type="number" name="amount" id="amount" placeholder="Deposit Amount" required>
+                <br><br>
+                <button class="button-2">Deposit</button>
+            </div>
+          </form>
+
+          <form action="/withdraw" method="post">
+            <div id="form-div">
+                <input type="number" name="amount" id="amount" placeholder="Withdraw Amount" required>
+                <br><br>
+                <button class="button-2">Withdraw</button>
+            </div>
+          </form>
+
+          <form action="/transfer" method="post">
+      			<div id="form-div">
+      				<input type="text" name="recipient" id="recipient" placeholder="Recipient" required>
+              <br><br>
+      				<input type="number" name="amount" id="amount" placeholder="Transfer Amount" required>
+              <br><br>
+              <button class="button-2">Transfer</button>
+      			</div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </body>
+</html>

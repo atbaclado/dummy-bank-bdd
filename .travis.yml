@@ -1,0 +1,32 @@
+language: node_js
+node_js:
+  - "7"
+
+addons:
+  postgresql: "9.6"
+
+services:
+  - postgresql
+
+before_script:
+  - psql -c 'create database bankdb;' -U postgres
+
+before_install:
+  - npm install
+
+deploy:
+  skip_cleanup: true
+
+jobs:
+  include:
+    deploy: &heroku
+        provider: heroku
+        app: blooming-retreat-41751
+        api_key: b1880a05-488c-460f-805f-1bb4fcd0833a
+        
+notifications:
+  email:
+    - paneriokat@gmail.com
+    - honeydrops149@gmail.com
+  on_success: always
+  on_failure: always
